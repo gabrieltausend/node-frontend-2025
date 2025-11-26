@@ -1,4 +1,3 @@
-// LoggedUser.jsx
 import { useAuthFetch } from "../auth/useAuthFetch";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
@@ -6,8 +5,7 @@ import { useAuth } from "../auth/useAuth";
 const NavbarLoggedUser = () => {
     const navigate = useNavigate();
     const authFetch = useAuthFetch();
-    const { user, setUser } = useAuth(); // agora vem do contexto
-
+    const { user, setUser } = useAuth();
     const handleLogoutClick = async (e) => {
         e.preventDefault();
         try {
@@ -22,7 +20,6 @@ const NavbarLoggedUser = () => {
             console.log(error);
         }
     }
-
     if (!user) {
         return (
             <ul className="nav-item dropdown m-0 p-0">
@@ -34,7 +31,6 @@ const NavbarLoggedUser = () => {
                 >
                     Usuário Desconectado
                 </button>
-
                 <ul className="dropdown-menu dropdown-menu-end">
                     <li>
                         <Link className="dropdown-item text-center" type="button" to="/usuarios/login">
@@ -50,7 +46,6 @@ const NavbarLoggedUser = () => {
             </ul>
         );
     }
-
     return (
         <ul className="nav-item dropdown m-0 p-0">
             <button
@@ -61,7 +56,6 @@ const NavbarLoggedUser = () => {
             >
                 {user.nome}
             </button>
-
             <ul className="dropdown-menu dropdown-menu-end">
                 <li>
                     <button className="dropdown-item text-center" type="button" onClick={handleLogoutClick}>
@@ -72,5 +66,4 @@ const NavbarLoggedUser = () => {
         </ul>
     );
 };
-
 export default NavbarLoggedUser;

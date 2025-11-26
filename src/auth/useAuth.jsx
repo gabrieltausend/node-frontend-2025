@@ -1,4 +1,3 @@
-// src/auth/useAuth.js
 import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 
@@ -9,10 +8,8 @@ const useAuth = () => {
   }
   return context;
 }
-
 const useCurrentUser = () => {
   const { user } = useAuth();
   return user;
 }
-
 export {useCurrentUser, useAuth};

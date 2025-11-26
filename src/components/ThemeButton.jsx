@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 
 const ThemeButton = () => {
     const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
-
     useEffect(() => {
         document.querySelector("html").setAttribute("data-bs-theme", darkMode ? "dark" : "light");
         localStorage.setItem("darkMode", darkMode);
     }, [darkMode]);
-
     return (
         <div className="form-check form-switch m-0">
             <input
@@ -20,5 +18,4 @@ const ThemeButton = () => {
         </div>
     );
 };
-
 export default ThemeButton;

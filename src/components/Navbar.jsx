@@ -8,14 +8,12 @@ export default function Navbar() {
             <div className="container-fluid">
                 {/* 1) Brand - fica sempre à esquerda */}
                 <Link className="navbar-brand" to="/">
-                    Atende Aí
+                    AC - Projetos e Construções
                 </Link>
-
                 {/* 2) Área da direita SEM participar do collapse */}
                 <div className="d-flex align-items-center ms-auto order-lg-3">
                     <ThemeButton />
                     <NavbarLoggedUser />
-
                     {/* Botão de colapso do menu (só aparece em < lg) */}
                     <button
                         className="navbar-toggler ms-2"
@@ -29,7 +27,6 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                 </div>
-
                 {/* 3) Menu que colapsa (apenas os links) */}
                 <div
                     className="collapse navbar-collapse order-lg-2"
@@ -43,28 +40,26 @@ export default function Navbar() {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Chamados
+                                Pedidos
                             </Link>
                             <ul className="dropdown-menu">
                                 <li>
                                     <Link className="dropdown-item" to="/chamados">
-                                        Lista de Chamados
+                                        Lista de Pedidos
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="dropdown-item" to="/chamados/create">
-                                        Criar Chamado
+                                        Fazer Pedido
                                     </Link>
                                 </li>
                             </ul>
                         </li>
-
                         <li className="nav-item">
                             <NavLink to="/sobre" className="nav-link">
                                 Sobre
                             </NavLink>
                         </li>
-
                         <li className="nav-item">
                             <NavLink to="/contato" className="nav-link">
                                 Contato

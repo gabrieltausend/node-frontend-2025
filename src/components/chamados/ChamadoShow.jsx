@@ -3,7 +3,6 @@ const ChamadoShow = ({ chamado }) => {
     const texto = chamado.texto;
     const estado = chamado.estado;
     const hasImagem = chamado.url_imagem ? true : false;
-
     return (
         <div className='m-2'>
             <div className='my-2'>
@@ -30,9 +29,7 @@ const ChamadoShow = ({ chamado }) => {
                                         src={chamado.url_imagem}
                                         alt={`Imagem do chamado ${chamado.id}`}
                                         onError={(e) => {
-                                            // Para evitar loops infinitos caso a imagem de fallback também falhe
                                             e.target.onerror = null;
-                                            // Define uma imagem de fallback
                                             e.target.src = "https://dummyimage.com/40x40/cccccc/000000.png&text=Error";
                                         }}
                                         className='border border-2 border-dark rounded-circle'
@@ -46,5 +43,4 @@ const ChamadoShow = ({ chamado }) => {
         </div>
     )
 }
-
 export default ChamadoShow

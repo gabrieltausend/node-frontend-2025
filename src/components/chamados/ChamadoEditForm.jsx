@@ -11,77 +11,50 @@ const ChamadoEditForm = ({ chamado }) => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const authFetch = useAuthFetch();
-
     const submitForm = async (e) => {
         e.preventDefault();
-
-        // 1. Crie um novo objeto FormData
         const formData = new FormData();
-
-        // 2. Adicione todos os campos do formulário
-        // A chave ('estado', 'texto', etc.) deve ser o nome que sua API espera
         formData.append('texto', texto);
         formData.append('estado', estado);
         if (imagem) {
-            formData.append('imagem', imagem); // 'imagem' é a chave para o arquivo
+            formData.append('imagem', imagem);
         }
-
         try {
-            // 2. Envia a requisição para a API
             const response = await authFetch(`http://localhost:3000/api/chamados/${chamado.id}`, {
                 method: 'PUT',
                 body: formData,
             });
-
             if (!response.ok) {
-                // Se a resposta não for OK, lança um erro
                 const erro = await response.json();
                 throw new Error(erro.erro || `Erro HTTP: ${response.status}`);
             }
-
-            // Faz o parse do json recebido
             await response.json();
-
             navigate(`/chamados`);
-
         } catch (error) {
-            // Se a requisição foi cancelada com AbortController, ignore.
-            // Caso contrário, exiba a mensagem no toast.
             if (error?.name !== 'AbortError') setError(error.message);
         }
     }
-
-    // Função assíncrona para remover o estado do chamado
     const deleteImageChamado = async () => {
         try {
-            // 2. Envia a requisição para a API
             const response = await authFetch(`http://localhost:3000/api/chamados/${chamado.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ url_imagem: null }), // Envia apenas o campo a ser alterado
+                body: JSON.stringify({ url_imagem: null }),
             });
-
             if (!response.ok) {
-                // Se a resposta não for OK, lança um erro
                 const erro = await response.json();
                 throw new Error(erro.erro || `Erro HTTP: ${response.status}`);
             }
-
-            // Requisição foi um sucesso, agora redirecione!
             setHasImagem(false);
-
         } catch (error) {
-            // Se a requisição foi cancelada com AbortController, ignore.
-            // Caso contrário, exiba a mensagem no toast.
             if (error?.name !== 'AbortError') setError(error.message);
         }
     };
-
     return (
         <form onSubmit={submitForm} className='m-2'>
-            {/* Toast de erro simples. Fica visível quando "error" tem conteúdo. */}
+            {/* Toast de erro simples. Fica visível quando "error" tem conteúdo */}
             {error && <Toast error={error} setError={setError} />}
 
             <div className='my-2'>
@@ -128,15 +101,14 @@ const ChamadoEditForm = ({ chamado }) => {
                         className="form-control"
                         type="file"
                         id="id-input-imagem"
-                        onChange={(e) => setImagem(e.target.files[0])} // Primeiro dos arquivos selecionados
+                        onChange={(e) => setImagem(e.target.files[0])}
                     />
                 </div>
             </div>
             <div className='my-2'>
-                <button type='submit' className='btn btn-primary'>Enviar</button>
+                <button type='submit' className='btn btn-secondary'>Enviar</button>
             </div>
         </form>
     )
 }
-
 export default ChamadoEditForm

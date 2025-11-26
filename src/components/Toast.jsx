@@ -1,4 +1,3 @@
-
 const Toast = ({error, setError}) => {
     return (
         <div className="toast-container position-fixed bottom-0 end-0 p-3">
@@ -20,5 +19,4 @@ const Toast = ({error, setError}) => {
         </div>
     )
 }
-
 export default Toast
