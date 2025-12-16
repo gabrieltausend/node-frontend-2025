@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import Navbar from "../components/Navbar"
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import { useAuth } from "../auth/useAuth";
 
 const App = () => {
@@ -9,27 +9,67 @@ const App = () => {
             <Navbar />
             {/* Imagem centralizada */}
             <div className="flex justify-center items-center mt-8">
-                <img 
-                    src="/logo.png" 
-                    alt="Logo" 
-                    className="w-48 h-auto"
+                <img
+                    src="/logo.png"
+                    alt="Logo"
+                    className="w-30 h-auto"
                 />
             </div>
             <div className="flex flex-col items-center mt-6">
-                {!user && (
-                    <>
-                        <Link to="/usuarios/login" className="btn btn-secondary m-4">
-                            Entrar como Usuário
-                        </Link>
-                        <Link to="/usuarios/register" className="btn btn-secondary m-4">
-                            Registrar Usuário
-                        </Link>
-                    </>
-                )}
-                <Link to="/chamados" className="btn btn-secondary m-4">Pedidos</Link>
-                <Link to="/chamados/create" className="btn btn-secondary m-4">Criar Pedido</Link>
+                <Link to="/chamados/create" className="btn btn-secondary m-4">
+                    Criar um Pedido
+                </Link>
             </div>
+            {/* Carrossel */}
+            <div
+                id="carouselExampleControls"
+                className="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img
+                            className="d-block w-50 mx-auto"
+                            src="/crn1.png"
+                            alt="Fachada 1 CRN"
+                        />
+                    </div>
+                    <div className="carousel-item">
+                        <img
+                            className="d-block w-50 mx-auto"
+                            src="/crn2.png"
+                            alt="Fachada 2 CRN"
+                        />
+                    </div>
+                    <div className="carousel-item">
+                        <img
+                            className="d-block w-50 mx-auto"
+                            src="/crn3.png"
+                            alt="Fachada 3 CRN"
+                        />
+                    </div>
+                </div>
+                <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                >
+                    <span className="carousel-control-prev-icon"></span>
+                </button>
+
+                <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                >
+                    <span className="carousel-control-next-icon"></span>
+                </button>
+            </div>
+            <h2 className="mx-2">Contatos</h2>
+            <h3 className="mx-3">Email: contato@acprojeto.com.br, Instagram: acprojetoseconstrucoes, Whatsapp: (49)99907-6820</h3>
         </div>
-    )
-}
-export default App
+    );
+};
+export default App;

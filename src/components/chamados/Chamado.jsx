@@ -1,6 +1,3 @@
-// Este componente é responsável por renderizar um cartão de chamado e permitir
-// que o usuário alterne o seu estado (ativo/inativo) diretamente no backend,
-// usando o helper de requisições autenticadas (useAuthFetch).
 import { Link } from 'react-router-dom';
 import { useAuthFetch } from '../../auth/useAuthFetch';
 import { useAuth } from '../../auth/useAuth';

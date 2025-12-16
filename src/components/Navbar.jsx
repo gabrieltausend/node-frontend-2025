@@ -33,36 +33,14 @@ export default function Navbar() {
                     id="navbarSupportedContent"
                 >
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item dropdown">
-                            <Link
-                                className="nav-link dropdown-toggle"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Pedidos
-                            </Link>
-                            <ul className="dropdown-menu">
-                                <li>
-                                    <Link className="dropdown-item" to="/chamados">
-                                        Lista de Pedidos
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/chamados/create">
-                                        Fazer Pedido
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
                         <li className="nav-item">
                             <NavLink to="/sobre" className="nav-link">
                                 Sobre
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/contato" className="nav-link">
-                                Contato
+                            <NavLink to="/chamados" className="nav-link">
+                                Pedidos
                             </NavLink>
                         </li>
                     </ul>

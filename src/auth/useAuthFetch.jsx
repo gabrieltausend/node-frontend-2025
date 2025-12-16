@@ -1,7 +1,3 @@
-// Este hook cria uma função "authFetch" que faz requisições HTTP com:
-// 1) Access Token no header Authorization (quando existir em sessionStorage)
-// 2) Cookies incluídos (credentials: 'include') — necessário para enviar o refresh_token HttpOnly
-// 3) Renovação automática do access token quando a API responder 401 (não autorizado)
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
