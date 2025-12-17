@@ -16,7 +16,6 @@ const csp = [
 ].join("; ");
 export default defineConfig({
   plugins: [react()],
-  base: "/node-frontend-2025/"
   server: {
     headers: {
     },
