@@ -12,7 +12,7 @@ const ChamadosIndex = () => {
         <div>
             <Navbar />
             <h1 className='mx-2'>Lista de pedidos</h1>
-            <Link to="/" className="btn btn-primary mx-2">Voltar</Link>
+            <Link to="/" className="btn btn-secondary mx-2">Voltar</Link>
             <Link to="/chamados/create" className='btn btn-secondary'>Criar pedido</Link>
             <ChamadosList />
         </div>

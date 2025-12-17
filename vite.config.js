@@ -6,7 +6,7 @@ const csp = [
   "style-src 'self'",
   "img-src 'self' data:",
   "font-src 'self'",
-  "connect-src 'self' http://localhost:3000", 
+  "connect-src 'self' https://ac-projetos-backend.onrender.com", 
   "base-uri 'none'",
   "frame-ancestors 'none'",
   "form-action 'self'",
@@ -16,6 +16,7 @@ const csp = [
 ].join("; ");
 export default defineConfig({
   plugins: [react()],
+  base: "/node-frontend-2025/"
   server: {
     headers: {
     },
