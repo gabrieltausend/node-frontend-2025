@@ -38,11 +38,9 @@ const ChamadoFormCreate = () => {
     }
     return (
         <form onSubmit={handleSubmit} className='m-2' encType="multipart/form-data">
-            {/* Toast de erro simples. Fica visível quando "error" tem conteúdo. */}
             {error && <Toast error={error} setError={setError} />}
-            {/* Campo de texto principal do chamado */}
             <div className='my-2'>
-                <label className='form-label' htmlFor="id-input-texto">Texto</label>
+                <label className='form-label' htmlFor="id-input-texto">Qual seu pedido?</label>
                 <input
                     className='form-control'
                     type="text"
@@ -52,30 +50,16 @@ const ChamadoFormCreate = () => {
                     placeholder='Digite o texto do chamado'
                 />
             </div>
-            {/* Select simples para o estado inicial do chamado */}
             <div className='my-2'>
-                <label className='form-label' htmlFor="id-select-estado">Estado</label>
+                <label className='form-label' htmlFor="id-select-estado">Estado do pedido:</label>
                 <select
                     id='id-select-estado'
                     className='form-select'
                     onChange={(e) => setEstado(e.target.value)}
                 >
                     <option value="a">Aberto</option>
-                    <option value="f">Fechado</option>
                 </select>
             </div>
-            {/* Upload de arquivo (imagem). O arquivo real fica em e.target.files[0] */}
-            <div className='my-2'>
-                <label className='form-label' htmlFor="id-input-imagem">Imagem</label>
-                <input
-                    className='form-control'
-                    type="file"
-                    id="id-input-imagem"
-                    accept="image/*"
-                    onChange={(e) => setImagem(e.target.files?.[0] ?? null)}
-                />
-            </div>
-            {/* Botão de envio do formulário */}
             <div className='my-2'>
                 <button type='submit' className='btn btn-secondary'>Enviar</button>
             </div>

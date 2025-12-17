@@ -44,7 +44,7 @@ const ChamadosEdit = () => {
     return (
         <div>
             <Navbar />
-            <h1 className='mx-2'>ChamadosEdit.jsx</h1>
+            <h1 className='mx-2'>Faça uma edição em seu pedido, caso queira acrescentar algo ou realizar uma correção</h1>
             <Link to="/chamados" className="btn btn-secondary mx-2">Voltar</Link>
             <ChamadoEditForm chamado={chamadoData} />
         </div>

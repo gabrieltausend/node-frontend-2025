@@ -11,7 +11,7 @@ const ChamadosIndex = () => {
     return (
         <div>
             <Navbar />
-            <h1 className='mx-2'>Pedidos</h1>
+            <h1 className='mx-2'>Lista de pedidos</h1>
             <Link to="/" className="btn btn-primary mx-2">Voltar</Link>
             <Link to="/chamados/create" className='btn btn-secondary'>Criar pedido</Link>
             <ChamadosList />

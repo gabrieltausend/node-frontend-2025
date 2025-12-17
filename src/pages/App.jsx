@@ -7,7 +7,6 @@ const App = () => {
     return (
         <div>
             <Navbar />
-            {/* Imagem centralizada */}
             <div className="flex justify-center items-center mt-8">
                 <img
                     src="/logo.png"
@@ -20,7 +19,6 @@ const App = () => {
                     Criar um Pedido
                 </Link>
             </div>
-            {/* Carrossel */}
             <div
                 id="carouselExampleControls"
                 className="carousel slide"

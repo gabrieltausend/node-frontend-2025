@@ -6,15 +6,12 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                {/* 1) Brand - fica sempre à esquerda */}
                 <Link className="navbar-brand" to="/">
                     AC - Projetos e Construções
                 </Link>
-                {/* 2) Área da direita SEM participar do collapse */}
                 <div className="d-flex align-items-center ms-auto order-lg-3">
                     <ThemeButton />
                     <NavbarLoggedUser />
-                    {/* Botão de colapso do menu (só aparece em < lg) */}
                     <button
                         className="navbar-toggler ms-2"
                         type="button"
@@ -27,7 +24,6 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                {/* 3) Menu que colapsa (apenas os links) */}
                 <div
                     className="collapse navbar-collapse order-lg-2"
                     id="navbarSupportedContent"

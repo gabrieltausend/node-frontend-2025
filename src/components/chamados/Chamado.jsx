@@ -52,7 +52,6 @@ const Chamado = ({ chamado, setError, onChamadoEstadoChange, onChamadoDelete }) 
                     <strong>#{chamado.Usuarios_id}</strong>
                 </div>
                 <div className="card-body">
-                    {/* Se houver imagem, tenta exibir; se der erro no carregamento, usa um fallback local */}
                     {chamado.url_imagem && (
                         <img
                             className="me-2"
@@ -66,8 +65,6 @@ const Chamado = ({ chamado, setError, onChamadoEstadoChange, onChamadoDelete }) 
                     <Link to={`/chamados/${chamado.id}`} className='text-body text-decoration-none'>{chamado.texto}</Link>
                 </div>
                 <div className="card-footer text-body-secondary">
-                    {/* Botão que alterna o estado do chamado
-              Ao clicar, dispara handleEstadoChange (PATCH) */}
                     {chamado.estado === 'a' && (
                         <button
                             className="btn btn-light me-2"
@@ -86,7 +83,6 @@ const Chamado = ({ chamado, setError, onChamadoEstadoChange, onChamadoDelete }) 
                             Respondido
                         </button>
                     )}
-                    {/* Botões "Editar" e "Remover" estão presentes para futuras ações */}
                     {(currentUserId == chamado.Usuarios_id || currentUserIsAdmin) && <Link to={`/chamados/${chamado.id}/edit`} className="btn btn-info me-2 text-white">Editar</Link>}
                     {(currentUserId == chamado.Usuarios_id || currentUserIsAdmin) && <button className="btn btn-danger me-2" onClick={handleChamadoDelete}>Remover</button>}
                 </div>

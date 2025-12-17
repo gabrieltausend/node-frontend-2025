@@ -11,7 +11,7 @@ const ChamadosCreate = () => {
     return (
         <div>
             <Navbar />
-            <h1 className='mx-2'>PedidosCreate.jsx</h1>
+            <h1 className='mx-2'>Faça seu pedido para marcar uma reunião para orçamento de projeto ou obra!</h1>
             <Link to="/chamados" className='btn btn-secondary mx-2'>Voltar</Link>
             <ChamadoFormCreate />
         </div>

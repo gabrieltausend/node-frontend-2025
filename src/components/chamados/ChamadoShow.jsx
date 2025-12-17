@@ -18,28 +18,6 @@ const ChamadoShow = ({ chamado }) => {
                 {estado === "a" && <input className="form-control" type="text" id="id-input-texto" value="Aberto" readOnly />}
                 {estado === "f" && <input className="form-control" type="text" id="id-input-texto" value="Fechado" readOnly />}
             </div>
-            <div className='my-2'>
-                {hasImagem && (
-                    <>
-                        <label htmlFor="id-input-imagem" className='form-label d-block'>Imagem</label>
-                        <div className='d-inline-flex gap-2'>
-                            {chamado.url_imagem && (
-                                <>
-                                    <img
-                                        src={chamado.url_imagem}
-                                        alt={`Imagem do chamado ${chamado.id}`}
-                                        onError={(e) => {
-                                            e.target.onerror = null;
-                                            e.target.src = "https://dummyimage.com/40x40/cccccc/000000.png&text=Error";
-                                        }}
-                                        className='border border-2 border-dark rounded-circle'
-                                    />
-                                </>
-                            )}
-                        </div>
-                    </>
-                )}
-            </div>
         </div>
     )
 }
