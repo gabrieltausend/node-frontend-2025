@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./auth/AuthContext";
 import App from './pages/App.jsx'
 import Sobre from './pages/Sobre.jsx'
@@ -13,7 +13,7 @@ import UsuariosRegister from './pages/usuarios/UsuariosRegister.jsx';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     { path: "/", element: <App /> },
     { path: "/sobre", element: <Sobre /> },
     { path: "/contato", element: <Contato /> },
@@ -21,10 +21,10 @@ const router = createBrowserRouter([
     { path: "/chamados/create", element: <ChamadosCreate /> },
     { path: "/chamados/:id", element: <ChamadosShow /> },
     { path: "/chamados/:id/edit", element: <ChamadosEdit /> },
-
     { path: "/usuarios/login", element: <UsuariosLogin /> },
     { path: "/usuarios/register", element: <UsuariosRegister /> },
 ]);
+
 createRoot(document.getElementById('root')).render(
     <AuthProvider>
         <RouterProvider router={router} />
