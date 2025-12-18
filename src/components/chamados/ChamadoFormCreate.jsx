@@ -20,7 +20,7 @@ const ChamadoFormCreate = () => {
         fd.append('estado', estado);
         if (imagem) fd.append('imagem', imagem);
         try {
-            const response = await authFetch('http://localhost:3000/api/chamados', {
+            const response = await authFetch('https://ac-projetos-backend.onrender.com/api/chamados', {
                 method: 'POST',
                 body: fd
             });

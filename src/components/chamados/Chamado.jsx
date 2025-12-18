@@ -8,7 +8,7 @@ const Chamado = ({ chamado, setError, onChamadoEstadoChange, onChamadoDelete }) 
     const currentUserId = user?.sub;
     const currentUserIsAdmin = user?.papel == 1;
     const handleEstadoChange = async () => {
-        const url = `http://localhost:3000/api/chamados/${chamado.id}`;
+        const url = `https://ac-projetos-backend.onrender.com/api/chamados/${chamado.id}`;
         const payload = JSON.stringify({
             estado: chamado.estado === 'a' ? 'f' : 'a',
         });
@@ -29,7 +29,7 @@ const Chamado = ({ chamado, setError, onChamadoEstadoChange, onChamadoDelete }) 
         }
     };
     const handleChamadoDelete = async () => {
-        const url = `http://localhost:3000/api/chamados/${chamado.id}`;
+        const url = `https://ac-projetos-backend.onrender.com/api/chamados/${chamado.id}`;
         try {
             const res = await authFetch(url, {
                 method: 'DELETE'

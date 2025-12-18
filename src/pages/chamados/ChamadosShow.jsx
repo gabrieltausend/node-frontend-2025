@@ -18,7 +18,7 @@ const ChamadosShow = () => {
             setLoading(true);
             setError(null);
             try {
-                const response = await authFetch(`http://localhost:3000/api/chamados/${id}`);
+                const response = await authFetch(`https://ac-projetos-backend.onrender.com/api/chamados/${id}`);
                 if (!response.ok) {
                     throw new Error('Não foi possível carregar os dados do chamado.');
                 }

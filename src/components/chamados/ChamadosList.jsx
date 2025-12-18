@@ -15,7 +15,7 @@ const ChamadosList = () => {
         const abortController = new AbortController();
         const fetchChamados = async () => {
             try {
-                const res = await authFetch('http://localhost:3000/api/chamados', {
+                const res = await authFetch('https://ac-projetos-backend.onrender.com/api/chamados', {
                     method: 'GET',
                     signal: abortController.signal,
                 });

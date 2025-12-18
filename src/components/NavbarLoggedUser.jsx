@@ -9,7 +9,7 @@ const NavbarLoggedUser = () => {
     const handleLogoutClick = async (e) => {
         e.preventDefault();
         try {
-            await authFetch("http://localhost:3000/api/usuarios/logout", {
+            await authFetch("https://ac-projetos-backend.onrender.com/api/usuarios/logout", {
                 method: 'POST',
                 credentials: "include"
             });

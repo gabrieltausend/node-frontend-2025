@@ -17,6 +17,7 @@ const csp = [
 export default defineConfig({
   plugins: [react()],
   server: {
+    base: '/node-frontend-2025/',
     headers: {
     },
   },

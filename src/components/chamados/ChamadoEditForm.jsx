@@ -20,7 +20,7 @@ const ChamadoEditForm = ({ chamado }) => {
             formData.append('imagem', imagem);
         }
         try {
-            const response = await authFetch(`http://localhost:3000/api/chamados/${chamado.id}`, {
+            const response = await authFetch(`https://ac-projetos-backend.onrender.com/api/chamados/${chamado.id}`, {
                 method: 'PUT',
                 body: formData,
             });
