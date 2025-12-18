@@ -3,10 +3,10 @@ import Navbar from "../components/Navbar";
 import { useAuth } from "../auth/useAuth";
 
 // IMPORT DAS IMAGENS
-import logo from "../assets/logo.png";
-import crn1 from "../assets/crn1.png";
-import crn2 from "../assets/crn2.png";
-import crn3 from "../assets/crn3.png";
+import logo from "../public/logo.png";
+import crn1 from "../public/crn1.png";
+import crn2 from "../public/crn2.png";
+import crn3 from "../public/crn3.png";
 
 const App = () => {
     const { user } = useAuth();
