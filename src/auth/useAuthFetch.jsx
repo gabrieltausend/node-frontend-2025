@@ -25,7 +25,7 @@ const useAuthFetch = () => {
       if (res.status !== 401) {
         return res;
       }
-      const refreshRes = await fetch("http://localhost:3000/api/usuarios/refresh", {
+      const refreshRes = await fetch("https://ac-projetos-backend.onrender.com/api/usuarios/refresh", {
         method: "POST",
         credentials: "include",
         signal,
