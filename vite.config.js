@@ -16,14 +16,5 @@ const csp = [
 ].join("; ");
 export default defineConfig({
   plugins: [react()],
-  server: {
-    base: '/node-frontend-2025/',
-    headers: {
-    },
-  },
-  preview: {
-    headers: {
-      "Content-Security-Policy": csp,
-    },
-  },
+  base: '/node-frontend-2025/',
 });
